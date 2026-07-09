@@ -1,5 +1,7 @@
 # Vibe Marketplace — E-Commerce Multi-Filter Sidebar
 
+**🔗 Live Demo:** [https://quantiphi2.vercel.app](https://quantiphi2.vercel.app/)
+
 A high-traffic marketplace browsing interface where users sift through a product
 inventory using three simultaneous filter criteria — **category**, **price range**,
 and **minimum star rating** — plus a **Sort By** control. Built for the Quantiphi
