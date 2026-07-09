@@ -1,0 +1,14 @@
+{
+  "name": "marketplace-backend",
+  "version": "1.0.0",
+  "description": "Express API for the e-commerce multi-filter product catalog. All filtering and sorting business logic lives here.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}
