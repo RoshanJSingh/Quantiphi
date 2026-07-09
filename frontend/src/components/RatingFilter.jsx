@@ -13,7 +13,7 @@ function RatingFilter({ minRating, onChange }) {
             onChange={() => onChange(stars)}
           />
           <span className="stars">{'★'.repeat(stars)}{'☆'.repeat(5 - stars)}</span>
-          <span className="rating-hint">&amp; up</span>
+          {stars < 5 && <span className="rating-hint">&amp; up</span>}
         </label>
       ))}
       <label className="check-row">
