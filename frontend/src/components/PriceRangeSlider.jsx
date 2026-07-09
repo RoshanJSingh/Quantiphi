@@ -1,17 +1,18 @@
 // Dual-point range slider built from two overlaid native range inputs.
-// The two thumbs are clamped so min can never cross above max.
+// Dragging a thumb past the other one flips the pair: the dragged thumb
+// takes over the opposite bound so min ≤ max always holds.
 function PriceRangeSlider({ bounds, minPrice, maxPrice, onChange }) {
   const lo = minPrice ?? bounds.min
   const hi = maxPrice ?? bounds.max
 
   const handleMin = (e) => {
-    const value = Math.min(Number(e.target.value), hi)
-    onChange({ minPrice: value, maxPrice: hi })
+    const value = Number(e.target.value)
+    onChange({ minPrice: Math.min(value, hi), maxPrice: Math.max(value, hi) })
   }
 
   const handleMax = (e) => {
-    const value = Math.max(Number(e.target.value), lo)
-    onChange({ minPrice: lo, maxPrice: value })
+    const value = Number(e.target.value)
+    onChange({ minPrice: Math.min(value, lo), maxPrice: Math.max(value, lo) })
   }
 
   const pct = (v) => ((v - bounds.min) / (bounds.max - bounds.min)) * 100
