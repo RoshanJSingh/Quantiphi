@@ -1,0 +1,10 @@
+{
+  "name": "vibe-marketplace",
+  "version": "1.0.0",
+  "private": true,
+  "description": "E-commerce multi-filter product catalog — Vite React frontend + Express API deployed as a single Vercel project.",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}

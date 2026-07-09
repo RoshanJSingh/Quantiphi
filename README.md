@@ -78,6 +78,20 @@ cd frontend && npm install && npm run dev
 
 Open http://localhost:5173.
 
+## Deploy (Vercel, single project)
+
+The repo deploys as one Vercel project with zero extra configuration:
+
+- `vercel.json` builds `frontend/` (Vite) as the static site and rewrites
+  `/api/*` to a serverless function.
+- `api/index.js` wraps the same Express app (`backend/src/app.js`) that the
+  local server runs — the app is exported without `listen()`, so one codebase
+  serves both environments.
+- Root `package.json` carries the Express/CORS dependencies Vercel bundles
+  into the function.
+
+Import the repo at vercel.com/new (root directory: repo root) and deploy.
+
 ## Tech stack
 
 - **Backend:** Node.js, Express (in-memory dataset, layered routes/services/data structure)
